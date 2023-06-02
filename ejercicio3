@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+    int numerosPorGenerar;
+    int i;
+
+    // Semilla para la generación de números aleatorios
+    srand(time(0));
+
+    numerosPorGenerar = rand() % 16 + 5;
+
+    printf("Cantidad de números aleatorios a generar: %d\n", numerosPorGenerar);
+
+    for (i = 0; i < numerosPorGenerar; i++) {
+        int numero = rand() % 30 + 1;
+        int j;
+
+        printf("%-2d ", numero);
+
+        for (j = 0; j < numero; j++) {
+            printf("$");
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
