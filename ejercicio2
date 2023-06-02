@@ -1,29 +1,27 @@
 #include <stdio.h>
 
-int main()
-{
-    // Variable para almacenar el límite (N)
-    int n;
-    
-    // Valor inicial para comenzar a imprimir los números
-    int number = 1;
-    
-    // Solicitar al usuario el valor de N
-    printf("Ingrese el valor de N: ");
-    scanf("%d", &n);
-    
-    // Imprimir los números pares desde 1 hasta N
-    printf("Números pares del 1 al %d:\n", n);
-    
-    while (number <= n)
-    {
-        // Verificar si el número es par
-        if (number % 2 == 0)
-            printf("%d ", number);
-        
-        // Incrementar el contador del bucle en 1
-        number++;
+// Function to check leap year
+int checkLeapYear(int year) {
+    if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0))
+        return 1;
+    else
+        return 0;
+}
+
+int main() {
+    int startYear, endYear;
+
+    printf("Ingrese el año de inicio: ");
+    scanf("%d", &startYear);
+
+    printf("Ingrese el año de fin: ");
+    scanf("%d", &endYear);
+
+    printf("Años bisiestos desde %d hasta %d:\n", startYear, endYear);
+    for (int year = startYear; year <= endYear; year++) {
+        if (checkLeapYear(year))
+            printf("%d\t", year);
     }
-    
+
     return 0;
 }
