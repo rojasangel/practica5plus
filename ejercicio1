@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+    // Variable para almacenar el límite (N)
+    int n;
+    
+    // Valor inicial para comenzar a imprimir los números
+    int number = 1;
+    
+    // Solicitar al usuario el valor de N
+    printf("Ingrese el valor de N: ");
+    scanf("%d", &n);
+    
+    // Imprimir los números pares desde 1 hasta N
+    printf("Números pares del 1 al %d:\n", n);
+    
+    while (number <= n)
+    {
+        // Verificar si el número es par
+        if (number % 2 == 0)
+            printf("%d ", number);
+        
+        // Incrementar el contador del bucle en 1
+        number++;
+    }
+    
+    return 0;
+}
